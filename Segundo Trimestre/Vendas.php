@@ -1,0 +1,66 @@
+<?php
+class Vendas {
+    public $produtos;
+    public $valorProduto;
+    private $numProd=0;
+    
+    public function imprimir(){
+        echo "Venda no valor:".$this->valorProduto."</br>";
+        for ($i=0; $i<$numProd; $i++){
+            echo"Produto:".$this->produtos[$i]->nome."</br>";
+            echo"Valor UN:".$this->produtos[$i]->valorProduto."</br>";
+            echo"Quantidade:".$this->produtos[$i]->quantidade."</br>";
+            echo"Valor Total:".$this->produtos[$i]->valorCalculado."</br>";
+            
+        }
+    }
+
+public function calcValor(){
+    return $this->valorProduto=0;
+    for ($i=0; $i<$this->numProd; $i++){
+    $this->valorProduto+=$this->produtos[$i]->valorCalculado; 
+    
+}
+}
+
+public function gerarProduto(){
+    $p1=new Produtos();
+    $p1->id=1;
+    $p1->nome="Coca Cola";
+    $p1->valorProduto=10;
+    $p1->quantidade=1;
+    $p1->calcValor();
+    $this->numProd++;
+
+    $p2=new Produtos();
+    $p2->id=2;
+    $p2->nome="Fanta";
+    $p2->valorProduto=20;
+    $p2->quantidade=2;
+    $p2->calcValor();
+    $this->numProd++;
+
+    $p3=new Produtos();
+    $p3->id=3;
+    $p3->nome="Pães";
+    $p3->valorProduto=20;
+    $p3->quantidade=20;
+    $p3->calcValor();
+    $this->numProd++;
+
+    $p4=new Produtos();
+    $p4->id=4;
+    $p4->nome="Celular Samsung";
+    $p4->valorProduto=3000;
+    $p4->quantidade=1;
+    $p4->calcValor();
+    $this->numProd++;
+   
+
+    $this->produtos[0]=$p1;
+    $this->produtos[1]=$p2;
+    $this->produtos[2]=$p3;
+    $this->produtos[3]=$p4;
+}
+}
+?>
