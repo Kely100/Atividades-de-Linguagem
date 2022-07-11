@@ -1,0 +1,11 @@
+<?php
+include("Produtos.php");
+include("Vendas.php");
+
+$vendas= new Vendas();
+$vendas->gerarProduto();
+$vendas->calcularValor();
+
+echo"</br>";
+echo $Vendas->imprimir();
+?>
